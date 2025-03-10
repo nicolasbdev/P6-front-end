@@ -17,3 +17,17 @@ async function displayWorks() {
 		createworks(work)
 	})
 }
+
+function createworks(work) {
+	const figure = document.createElement("figure")
+	const img = document.createElement("img")
+	const figcaption = document.createElement("figcaption")
+	img.src = work.imageUrl
+	figcaption.textContent = work.title
+	figure.appendChild(img)
+	figure.appendChild(figcaption)
+	gallery.appendChild(figure)
+	figure.classList.add(".gallery")
+}
+
+displayWorks()
