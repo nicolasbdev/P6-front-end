@@ -12,8 +12,8 @@ async function getwork() {
 
 async function displayWorks() {
 	const works = await getwork()
-	gallery.innerHTML = ""
-	works.forEach((work)=>{
+	gallery.innerHTML = "" 	//On vide la gallerie avec la fonction innnerHTML
+	works.forEach((work)=>{ // Boucle pour faire appel à la fonction createworks qui s'occupe de la mise en page de chaque travaux. Work : pour chaque élément du tableau, work est un paramètre de la fonction forEach
 		createworks(work)
 	})
 }
