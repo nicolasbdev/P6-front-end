@@ -31,3 +31,22 @@ function createworks(work) {
 }
 
 displayWorks()
+
+//Requête pour récupérer les catégories des travaux
+
+async function getfilters() {
+	const response = await fetch("http://localhost:5678/api/categories")
+	return await response.json()
+}
+
+//Afficher les boutons des filtres 
+
+async function buttonfiltres() {
+	const buttons = await getfilters()
+	buttons.forEach(category=>{
+		const button = document.createElement("button")
+		button.textContent = category.name
+		button.id = category.id
+	})
+
+}
