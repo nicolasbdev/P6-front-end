@@ -1,5 +1,6 @@
 const gallery = document.querySelector(".gallery")
 
+const filtres = document.querySelector(".filtres")
 
 //Requêtes HTTP fonction qui sert à récupérer les travaux en ligne sous format json depuis l'API
 
@@ -47,6 +48,11 @@ async function buttonfiltres() {
 		const button = document.createElement("button")
 		button.textContent = category.name
 		button.id = category.id
+		filtres.appenChild(button)
+		
 	})
 
 }
+
+
+buttonfiltres()
