@@ -50,3 +50,14 @@ async function buttonfiltres() {
 	})
 
 }
+
+async function createCategories() {
+	const listcategories = await getfilters()
+	const buttons = document.querySelectorAll(".filtres button")
+	buttons.forEach((button)=>{
+		button.addEventListener("click", (event)=>{
+			btnId
+		})
+
+	})
+}
