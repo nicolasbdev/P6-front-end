@@ -33,14 +33,14 @@ function createworks(work) {
 
 displayWorks()
 
-//Requête pour récupérer les catégories des travaux
+//Requête pour récupérer les catégories des travaux // Question sur le code ci-dessous
 
 async function getfilters() {
 	const response = await fetch("http://localhost:5678/api/categories")
 	return await response.json()
 }
 
-//Afficher les boutons des filtres 
+//Afficher les boutons des filtres // Pourquoi on réutilixe le paramètres category ? Pourquoi n'y a-ti pas button.class ?
 
 async function buttonfiltres() {
 	const buttons = await getfilters()
@@ -51,6 +51,10 @@ async function buttonfiltres() {
 		filtres.appenChild(button)
 		
 	})
+
+// Question également sur le code ci-dessous. Il me semble que cela consiste à créer des Id pour tous les bouttons avec la classe .filtres Est-ce le cas ? 
+
+// On avait déjà déclaré la constante buttons au-dessus. Pourquoi le fait-on à nouvau ?
 
 }
 
