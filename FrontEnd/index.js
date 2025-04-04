@@ -40,7 +40,7 @@ async function getfilters() {
 	return await response.json()
 }
 
-//Afficher les boutons des filtres // Pourquoi on réutilixe le paramètres category ? Pourquoi n'y a-ti pas button.class ?
+//Afficher les boutons des filtres // Pourquoi on réutilise le paramètres category ? Pourquoi n'y a-ti pas button.class ? On utilise le tableau du fichier json
 
 async function buttonfiltres() {
 	const buttons = await getfilters()
@@ -52,7 +52,7 @@ async function buttonfiltres() {
 		
 	})
 
-// Question également sur le code ci-dessous. Il me semble que cela consiste à créer des Id pour tous les bouttons avec la classe .filtres Est-ce le cas ? 
+// Question également sur le code ci-dessous. Il me semble que cela consiste à créer des Id pour tous les boutons avec la classe .filtres Est-ce le cas ? 
 
 // On avait déjà déclaré la constante buttons au-dessus. Pourquoi le fait-on à nouvau ?
 
@@ -63,8 +63,12 @@ async function createCategories() {
 	const buttons = document.querySelectorAll(".filtres button")
 	buttons.forEach((button)=>{
 		button.addEventListener("click", (event)=>{
-			btnId
+			btnId = event.target.id
+			gallery.innerHTML = ""
+			if(btnId !=="0"){
+				const fitlerWork = listcategories.filter((work)=>{
+			return work.categoryId == btnId})
+
 		})
 
-	})
-}
+	})}
