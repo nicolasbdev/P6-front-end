@@ -59,16 +59,20 @@ async function buttonfiltres() {
 }
 
 async function createCategories() {
-	const listcategories = await getfilters()
+	const listcategories = await getwork()
 	const buttons = document.querySelectorAll(".filtres button")
-	buttons.forEach((button)=>{
-		button.addEventListener("click", (event)=>{
-			btnId = event.target.id
-			gallery.innerHTML = ""
-			if(btnId !=="0"){
-				const fitlerWork = listcategories.filter((work)=>{
-			return work.categoryId == btnId})
-
-		})
-
-	})}
+	buttons.forEach((button) =>{                                          button.addEventListener("click", (event) => {                       
+            btnId = event.target.id                                         
+            gallery.innerHTML = ""                                          
+            if (btnId !== "0"){                                             
+                const filterWorks = listCategories.filter((work) => {    
+                return work.categoryId == btnId                             
+                })               
+                filtereWork.forEach ((work) => {                          
+                    createWorks(work)                                       
+                })
+            }else{                                                          
+                displayWorks()                                              
+            }
+        })
+    })} 
