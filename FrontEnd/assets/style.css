@@ -186,3 +186,16 @@ footer nav ul {
 	margin: 2em
 }
 
+
+/* Code ci-dessous s'applique à la page Login */
+
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	width: 40%;
+	margin: auto;
+}
