@@ -187,8 +187,7 @@ footer nav ul {
 }
 
 
-/* Code ci-dessous s'applique à la page Login */
-
+/* Ci-dessous code css pour la page login.html */
 
 form {
 	display: flex;
@@ -197,5 +196,9 @@ form {
 
 main {
 	width: 40%;
+	margin: auto;
+}
+
+.input_connection {
 	margin: auto;
 }
