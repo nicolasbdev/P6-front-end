@@ -82,7 +82,7 @@ h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
 }
 nav ul {
 	display: flex;
@@ -199,6 +199,42 @@ main {
 	margin: auto;
 }
 
-.input_connection {
-	margin: auto;
-}
+ #message {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+ }
+
+ main p {
+	text-decoration: underline;
+ }
+
+ #login_list {
+	font-weight: bold;
+ }
+
+ #login_title {
+	margin-bottom: 0px;
+ }
+
+ #login_form {
+	margin: 0px;
+ }
+
+ body {
+	background-color: rgb(255, 252, 248);
+ }
+
+ footer {
+	background-color: white;
+	width: 100%;
+	height: 50px;
+ }
+
+ footer li {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+ }
