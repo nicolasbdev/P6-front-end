@@ -254,11 +254,6 @@ form {
 .filter-btn {
 	background-color: #1D6154;
 	border-radius: 20px;
-	height: 20px;
-	width: 40px;
-	margin: auto;
-	display: flex;
-	flex-direction: row;
-	flex-direction: center;
-	
+	height: 50px;
+	width: 120px;
 }
