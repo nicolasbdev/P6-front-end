@@ -238,3 +238,27 @@ form {
 	flex-direction: column;
 	justify-content: center;
  }
+
+ /*Ci dessous code css pour terminer la page index.html */
+
+
+
+#introduction p {
+	text-decoration: none;
+}
+
+#contact p {
+	text-decoration: none;
+}
+
+.filter-btn {
+	background-color: #1D6154;
+	border-radius: 20px;
+	height: 20px;
+	width: 40px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-direction: center;
+	
+}
