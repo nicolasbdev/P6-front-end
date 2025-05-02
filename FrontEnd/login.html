@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>Sophie Bluel - Architecte d'intérieur</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<meta name="description" content="">
-	<link rel="stylesheet" href="./assets/style.css">
-	<script src="login.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Sophie Bluel - Architecte d'intérieur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="login.js" defer></script>
 </head>
 <body>
-<header>
-	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-	<nav>
-		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li id="login_list">login</li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
-</header>
+  <header>
+    <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+    <nav>
+      <ul>
+        <li>projets</li>
+        <li>contact</li>
+        <li id="login_list">login</li>
+        <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+      </ul>
+    </nav>
+  </header>
 
-<main id="contact">
-	<h2 id="login_title">Log In</h2>
-	<p class="error_message"></p>
-	<form id="login_form" action="#" method="post">
-		<label for="email">E-mail</label>
-		<input type="text" name="email" id="email">
-		<label for="mot_de_passe">Mot de passe</label>
-		<input type="mot_de_passe" name="mot_de_passe" id="mot_de_passe">
-	</form>
-	<input type="submit" id="message" value="Se connecter"></input>
-	<p>Mot de passe oublié</p>
-</main>
+  <main id="contact">
+    <h2 id="login_title">Log In</h2>
+    <p class="error_message"></p>
+    <form id="login_form" action="#" method="post">
+      <label for="email">E-mail</label>
+      <input type="text" name="email" id="email" required>
 
-<footer>
-	<nav>
-		<ul>
-			<li>Mentions Légales</li>
-		</ul>
-	</nav>
-</footer>
+      <label for="mot_de_passe">Mot de passe</label>
+      <input type="password" name="mot_de_passe" id="mot_de_passe" required>
 
+      <input type="submit" id="message" value="Se connecter">
+    </form>
+    <p><a href="#">Mot de passe oublié</a></p>
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li>Mentions Légales</li>
+      </ul>
+    </nav>
+  </footer>
 </body>
-
 </html>
-
