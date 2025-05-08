@@ -2,6 +2,10 @@
 const gallery = document.querySelector(".gallery");
 const filtres = document.querySelector(".filtres");
 
+const token = localStorage.getItem("token")
+const login = document.getElementById("#login")
+
+
 // Fonction pour récupérer les travaux depuis l'API
 async function getWorks() {
     const response = await fetch("http://localhost:5678/api/works");
@@ -87,3 +91,11 @@ async function addFilterEvents() {
 // Initialisation de l'application
 displayWorks();
 createFilterButtons();
+
+
+function logout() {
+    if(token) {
+        login.textContent = "logout"
+        filtres.remove ("")
+    }
+}
