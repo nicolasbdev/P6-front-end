@@ -96,6 +96,11 @@ createFilterButtons();
 function logout() {
     if(token) {
         login.textContent = "logout"
+        login.setAttribute("href", "#")
         filtres.remove ("")
     }
 }
+
+logout()
+
+
