@@ -281,3 +281,9 @@ form {
 	background-color: #1D6154;
 	color: white;
 }
+
+.portfolio-header {
+	display: flex;
+gap:10px;
+	align-items: center;
+}

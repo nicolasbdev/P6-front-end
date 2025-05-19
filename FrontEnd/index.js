@@ -3,7 +3,7 @@ const gallery = document.querySelector(".gallery");
 const filtres = document.querySelector(".filtres");
 const loginBtn = document.querySelector("#login");
 const modeEditBar = document.querySelector("#modeEditBar");
-const modifyBtn = document.createElement("button");
+const modifyBtn = document.querySelector("#modifyBtn");  // Sélection du bouton Modifier
 
 // Fonction pour récupérer les travaux depuis l'API
 async function getWorks() {
@@ -35,15 +35,67 @@ function createWorkElement(work) {
     gallery.appendChild(figure);
 }
 
+// Fonction pour récupérer les catégories (filtres)
+async function getFilters() {
+    const response = await fetch("http://localhost:5678/api/categories");
+    return await response.json();
+}
+
+// Fonction pour créer les boutons de filtres
+async function createFilterButtons() {
+    const categories = await getFilters();
+
+    // Création du bouton "Tous"
+    const allBtn = document.createElement("button");
+    allBtn.textContent = "Tous";
+    allBtn.id = "0";
+    allBtn.classList.add("filter-btn");
+    filtres.appendChild(allBtn);
+
+    // Création d'un bouton par catégorie
+    categories.forEach(category => {
+        const button = document.createElement("button");
+        button.textContent = category.name;
+        button.id = category.id;
+        button.classList.add("filter-btn");
+        filtres.appendChild(button);
+    });
+
+    // Ensuite, on ajoute les événements de clic
+    addFilterEvents();
+}
+
+// Fonction pour ajouter les événements sur les boutons filtres
+async function addFilterEvents() {
+    const allWorks = await getWorks();
+    const buttons = document.querySelectorAll(".filtres button");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", (event) => {
+            const btnId = event.target.id;
+            gallery.innerHTML = "";
+
+            if (btnId !== "0") {
+                const filteredWorks = allWorks.filter(work => work.categoryId == btnId);
+                filteredWorks.forEach(work => {
+                    createWorkElement(work);
+                });
+            } else {
+                displayWorks(); // Réaffiche tous les travaux
+            }
+        });
+    });
+}
+
 // Fonction de logout
 function logout() {
     const token = localStorage.getItem("token");
-    const login = document.querySelector("nav #login"); // Sélection plus précise
+    const login = document.querySelector("nav #login");
 
     if (token && login) { // Vérifie que login existe avant de manipuler
         login.textContent = "Logout";
         login.setAttribute("href", "#");
-        filtres.innerHTML = ""; // Supprimer les filtres
+        filtres.style.display = "none"; // Masquer les filtres lors de la connexion
 
         // Ajouter la barre Mode édition
         modeEditBar.classList.add("edition");
@@ -72,7 +124,7 @@ function logout() {
             login.textContent = "Login"; 
             modeEditBar.style.display = "none"; // Cacher la barre de mode édition
             document.querySelector(".modif-edition").style.display = "none"; // Cacher le bouton Modifier
-            filtres.innerHTML = ""; // Réinitialiser les filtres si nécessaire
+            filtres.style.display = "block"; // Réafficher les filtres après la déconnexion
         });
     }
 }
@@ -88,5 +140,9 @@ window.onload = () => {
         if (loginBtn) {
             loginBtn.textContent = "Login"; // Si aucun token, bouton Login
         }
+        filtres.style.display = "block"; // Assurer que les filtres sont visibles si l'utilisateur n'est pas connecté
+        createFilterButtons(); // Créer les boutons de filtres
     }
+    displayWorks(); // Afficher les travaux dès le début
 }
+

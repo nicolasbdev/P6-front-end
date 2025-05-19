@@ -9,59 +9,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
     <meta name="description" content="">
     <link rel="stylesheet" href="./assets/style.css">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+	integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+	crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="index.js" defer></script>
 </head>
 <body>
-<header>
-    <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-    <nav>
-        <ul>
-            <li>projets</li>
-            <li>contact</li>
-            <a href="login.html"><li id="login">login</li></a>
-            <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section id="introduction">
-        <figure>
-            <img src="./assets/images/sophie-bluel.png" alt="">
-        </figure>
-        <article>
-            <h2>Designer d'espace</h2>
-            <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-        </article>
-    </section>
-    <section id="portfolio">
-        <h2>Mes Projets</h2>
-        <div class="filtres"></div>
-        <div class="gallery"></div>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Vous avez un projet ? Discutons-en !</p>
-        <form action="#" method="post">
-            <label for="name">Nom</label>
-            <input type="text" name="name" id="name">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            <input type="submit" value="Envoyer">
-        </form>
-    </section>
-</main>
+    <!-- Div vide pour la barre de mode édition -->
+    <div id="modeEditBar"></div>
 
-<!-- Div vide pour la barre de mode édition -->
-<div id="modeEditBar"></div>
+    <header>
+        <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+        <nav>
+            <ul>
+                <li>projets</li>
+                <li>contact</li>
+                <a href="login.html"><li id="login">login</li></a>
+                <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="introduction">
+            <figure>
+                <img src="./assets/images/sophie-bluel.png" alt="">
+            </figure>
+            <article>
+                <h2>Designer d'espace</h2>
+                <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+            </article>
+        </section>
+        <section id="portfolio">
+            <div class="portfolio-header">
+                <h2>Mes Projets</h2>
+                <button id="modifyBtn" class="button-modifier">Modifier</button>
+            </div>
+            <div class="filtres"></div>
+            <div class="gallery"></div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Vous avez un projet ? Discutons-en !</p>
+            <form action="#" method="post">
+                <label for="name">Nom</label>
+                <input type="text" name="name" id="name">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <input type="submit" value="Envoyer">
+            </form>
+        </section>
+    </main>
 
-<footer>
-    <nav>
-        <ul>
-            <li>Mentions Légales</li>
-        </ul>
-    </nav>
-</footer>
+    <footer>
+        <nav>
+            <ul>
+                <li>Mentions Légales</li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
