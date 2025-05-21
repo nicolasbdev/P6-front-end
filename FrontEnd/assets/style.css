@@ -48,7 +48,6 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
@@ -75,7 +74,6 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
@@ -183,7 +181,7 @@ input[type="submit"]{
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
 }
 
 
@@ -237,6 +235,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	padding-top: 15px;
  }
 
  /*Ci dessous code css pour terminer la page index.html */
@@ -284,6 +283,39 @@ form {
 
 .portfolio-header {
 	display: flex;
-gap:10px;
+	gap:10px;
 	align-items: center;
+}
+
+
+/* Ci-dessous la barre du mode édition sur la page index */
+
+#modeEditBar {
+	background-color: grey;
+	margin: auto;
+	height: 40px;
+}
+
+#modeEditBar span {
+	color: white;
+}
+
+.fa-regular {
+	color: white;
+}
+
+/* Code de la partir Mes projets et du bouton modfier associé */
+
+.portfolio-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+/* Suppression des marges du body */
+
+
+
+body {
+	margin: 0 0;
 }
