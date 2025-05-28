@@ -3,7 +3,6 @@ const gallery = document.querySelector(".gallery");
 const filtres = document.querySelector(".filtres");
 const loginBtn = document.querySelector("#login");
 const modeEditBar = document.querySelector("#modeEditBar");
-const modifyBtn = document.querySelector("#modifyBtn");  // Sélection du bouton Modifier
 
 // Fonction pour récupérer les travaux depuis l'API
 async function getWorks() {
@@ -106,16 +105,19 @@ function logout() {
         icon.classList.add("fa-regular", "fa-pen-to-square");
         edit.textContent = "Mode édition";
 
-        // Bouton Modifier
-        const projet = document.querySelector("#portfolio");
-        projet.classList.add("modif-edition");
+        // Dynamique : Créer le bouton Modifier uniquement après la connexion
         const buttonModif = document.createElement("button");
-        const iconModif = document.createElement("i");
-        projet.appendChild(iconModif);
-        projet.appendChild(buttonModif);
-        iconModif.classList.add("fa-regular", "fa-pen-to-square");
         buttonModif.textContent = "Modifier";
         buttonModif.classList.add("button-modifier");
+
+        // Ajouter le bouton Modifier à la section portfolio-header
+        const portfolioHeader = document.querySelector(".portfolio-header");
+        portfolioHeader.appendChild(buttonModif);
+
+        // Ajouter l'événement "click" après avoir ajouté le bouton
+        buttonModif.addEventListener("click", () => {
+            openModal(containerModals); // Ouverture de la modal lors du clic sur le bouton Modifier
+        });
 
         // Event pour logout
         login.addEventListener("click", () => {
@@ -125,6 +127,7 @@ function logout() {
             modeEditBar.style.display = "none"; // Cacher la barre de mode édition
             document.querySelector(".modif-edition").style.display = "none"; // Cacher le bouton Modifier
             filtres.style.display = "block"; // Réafficher les filtres après la déconnexion
+            buttonModif.style.display = "none"; // Masquer le bouton Modifier après la déconnexion
         });
     }
 }
@@ -145,4 +148,3 @@ window.onload = () => {
     }
     displayWorks(); // Afficher les travaux dès le début
 }
-
