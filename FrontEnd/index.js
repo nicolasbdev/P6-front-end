@@ -86,7 +86,6 @@ async function addFilterEvents() {
     });
 }
 
-// Fonction de logout
 function logout() {
     const token = localStorage.getItem("token");
     const login = document.querySelector("nav #login");
@@ -110,9 +109,14 @@ function logout() {
         buttonModif.textContent = "Modifier";
         buttonModif.classList.add("button-modifier");
 
-        // Ajouter le bouton Modifier à la section portfolio-header
+        // Créer l'icône de modification
+        const modifyIcon = document.createElement("i");
+        modifyIcon.classList.add("fa-regular", "fa-pen-to-square");
+
+        // Ajouter l'icône et le bouton à la section portfolio-header
         const portfolioHeader = document.querySelector(".portfolio-header");
         portfolioHeader.appendChild(buttonModif);
+        buttonModif.appendChild(modifyIcon);  // Ajouter l'icône à côté du bouton
 
         // Ajouter l'événement "click" après avoir ajouté le bouton
         buttonModif.addEventListener("click", () => {

@@ -269,7 +269,7 @@ form {
 
 .filtres {
 	margin: auto;
-	display: flex;
+	display: flex important!;
 	flex-direction: row;
 	justify-content: center;
 	gap: 15px;
