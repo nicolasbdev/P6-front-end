@@ -510,3 +510,14 @@ label span {
 	flex-direction: row;
 	justify-content: center;
 }
+
+/* Stylisation bouton modifier */
+
+.button-modifier {
+	font-family: 'Syne';
+    font-weight: 700;
+    color: black;
+    margin: none;
+	border: none;
+	background-color: white;
+}
