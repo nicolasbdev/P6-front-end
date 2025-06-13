@@ -269,7 +269,7 @@ form {
 
 .filtres {
 	margin: auto;
-	display: flex important!;
+	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	gap: 15px;
@@ -501,6 +501,7 @@ label span {
 	align-items: center;
 	gap: 10px;
 	font-size: 12px;
+	display: none;
 }
 
 /* Centrage de la div portfolio header */
@@ -521,3 +522,4 @@ label span {
 	border: none;
 	background-color: white;
 }
+

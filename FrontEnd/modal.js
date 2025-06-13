@@ -45,6 +45,8 @@ displayGalleryModals();
 
 /************************* Delete photo modale **********************************/
 
+/* L'id est un identifiant de chaque élément pour pouvoir facilement l'identfier. */
+
 async function deleted() {
     const trashAll = document.querySelectorAll(".fa-trash-can");
     trashAll.forEach(trash => {
@@ -97,7 +99,7 @@ function resetPreview() {
     buttonAjout.style.display = "none";
     label.style.display = "flex";
     icone.style.display = "flex";
-}
+} ,
 
 /******* Boutton valider change de couleur si validation des champs *************/
 
