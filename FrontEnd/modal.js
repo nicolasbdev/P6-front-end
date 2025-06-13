@@ -99,7 +99,7 @@ function resetPreview() {
     buttonAjout.style.display = "none";
     label.style.display = "flex";
     icone.style.display = "flex";
-} ,
+}
 
 /******* Boutton valider change de couleur si validation des champs *************/
 
