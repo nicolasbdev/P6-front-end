@@ -268,8 +268,9 @@ form {
 /* Ci-dessous code CSS pour les boutons des filtres */
 
 .filtres {
+		display: flex !important;
+
 	margin: auto;
-	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	gap: 15px;
@@ -284,11 +285,6 @@ form {
 
 /* La classe ci-dessous est utilisée deux fois dans ce fichier CSS, voir la div située en fin de page */
 
-.portfolio-header {
-	display: flex;
-gap:10px;
-	align-items: center;
-}
   /********************* Style  Modals *******************/
  
 .containerModals {
@@ -314,6 +310,7 @@ gap:10px;
 	background-color: white;
 	border-radius: 10px;
 	gap: 20px;
+	padding: 30px;
 }
 
 .fa-xmark {
@@ -383,16 +380,29 @@ gap:10px;
 .buttonValider {
 	color: white;
 	cursor: pointer;
-	width: 60%;
+	width: 60%
+	
 }
 
 .buttonPhoto {
 	background-color: #1D6154;
+	padding-left: 40px;
+    padding-right: 40px;
+	padding-top: 10px;
+ padding-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
 }
 
 .buttonValider {
 	background-color: #A7A7A7;
 	border: none;
+	padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 25px;
 }
 .buttonValider:focus {
 	background-color: #A7A7A7;
@@ -403,6 +413,11 @@ gap:10px;
 	background-color: #1D6154;
 	border: none;
 	color: white;
+	padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 25px;
 }
 
 .buttonPhoto:hover {
@@ -420,7 +435,11 @@ gap:10px;
 	background-color: #E8F1F6 ;
 	width: 100%;
 	gap: 20px;
-	border-radius: 3px;
+	padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 25px;
 	
 }
 
@@ -501,25 +520,27 @@ label span {
 	align-items: center;
 	gap: 10px;
 	font-size: 12px;
-	display: none;
 }
 
 /* Centrage de la div portfolio header */
 
 .portfolio-header {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+  display: flex;
+    align-items: baseline;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1em;
 }
-
-/* Stylisation bouton modifier */
 
 .button-modifier {
-	font-family: 'Syne';
-    font-weight: 700;
-    color: black;
-    margin: none;
-	border: none;
-	background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border: none;
+  font-family: 'work sans';
+  font-weight: 300;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
 }
-
