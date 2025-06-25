@@ -49,25 +49,45 @@ displayGalleryModals();
 
 async function deleted() {
     const trashAll = document.querySelectorAll(".fa-trash-can");
+
     trashAll.forEach(trash => {
-        trash.addEventListener("click", () => {
+        // Supprimer les anciens écouteurs éventuels
+        trash.replaceWith(trash.cloneNode(true));
+    });
+
+    // Re-sélectionner les icônes clonées
+    const newTrashAll = document.querySelectorAll(".fa-trash-can");
+
+    newTrashAll.forEach(trash => {
+        trash.addEventListener("click", async () => {
             const id = trash.id;
+
             const init = {
                 method: "DELETE",
-                headers: { 'Authorization': `Bearer ${token}` }
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
             };
-            fetch("http://localhost:5678/api/works/" + id, init)
-                .then((res) => {
-                    console.log("L'image a bien été supprimée :", res.status, "id:", id);
-                    displayGalleryModals();
-                    displayWorks();
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+
+            try {
+                const response = await fetch(`http://localhost:5678/api/works/${id}`, init);
+                if (response.ok) {
+                    console.log("Image supprimée avec succès. ID:", id);
+
+                    // ⛔️ Ne ferme pas la modale ici
+                    // ✅ Mets à jour uniquement les deux galeries
+                    await displayGalleryModals(); // Recharge les images de la modale
+                    await displayWorks();         // Recharge la galerie principale
+                } else {
+                    console.error("Erreur API lors de la suppression :", response.status);
+                }
+            } catch (error) {
+                console.error("Erreur réseau :", error);
+            }
         });
     });
 }
+
 
 /************************** Preview photo modale  *****************/
 

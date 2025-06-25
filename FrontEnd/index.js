@@ -103,20 +103,21 @@ function logout() {
         modeEditBar.appendChild(edit);
         icon.classList.add("fa-regular", "fa-pen-to-square");
         edit.textContent = "Mode édition";
+// Créer le bouton Modifier avec icône directement
+const buttonModif = document.createElement("button");
+buttonModif.classList.add("button-modifier");
 
-        // Dynamique : Créer le bouton Modifier uniquement après la connexion
-        const buttonModif = document.createElement("button");
-        buttonModif.textContent = "Modifier";
-        buttonModif.classList.add("button-modifier");
+// Créer l'icône de modification
+const modifyIcon = document.createElement("i");
+modifyIcon.classList.add("fa-regular", "fa-pen-to-square");
 
-        // Créer l'icône de modification
-        const modifyIcon = document.createElement("i");
-        modifyIcon.classList.add("fa-regular", "fa-pen-to-square");
+// Ajouter l'icône PUIS le texte dans le bouton
+buttonModif.appendChild(modifyIcon);
+buttonModif.append(" Modifier"); // texte après l’icône
 
-        // Ajouter l'icône et le bouton à la section portfolio-header
-        const portfolioHeader = document.querySelector(".portfolio-header");
-        portfolioHeader.appendChild(buttonModif);
-        buttonModif.appendChild(modifyIcon);  // Ajouter l'icône à côté du bouton
+// Ajouter le bouton au header
+const portfolioHeader = document.querySelector(".portfolio-header");
+portfolioHeader.appendChild(buttonModif);
 
         // Ajouter l'événement "click" après avoir ajouté le bouton
         buttonModif.addEventListener("click", () => {
@@ -139,16 +140,17 @@ function logout() {
 // Vérification du token à l'ouverture de la page
 window.onload = () => {
     const token = localStorage.getItem("token");
+    const loginBtn = document.querySelector("#login");
+    const modeEditBar = document.querySelector("#modeEditBar"); 
+
     if (token) {
-        logout(); // Si le token est présent, exécuter le logout et l'affichage de la page
-        displayWorks(); // Réafficher les travaux après la connexion
+        logout(); // Affichage en mode connecté
+        displayWorks();
     } else {
-        const loginBtn = document.querySelector("#login");
-        if (loginBtn) {
-            loginBtn.textContent = "Login"; // Si aucun token, bouton Login
-        }
-        filtres.style.display = "block"; // Assurer que les filtres sont visibles si l'utilisateur n'est pas connecté
-        createFilterButtons(); // Créer les boutons de filtres
+        if (loginBtn) loginBtn.textContent = "Login";
+        if (modeEditBar) modeEditBar.style.display = "none"; // <-- Force le masquage ici de la barre lorsqu'on est déconnecter 
+        filtres.style.display = "block";
+        createFilterButtons();
     }
-    displayWorks(); // Afficher les travaux dès le début
-}
+    displayWorks();
+};
