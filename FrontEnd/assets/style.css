@@ -546,6 +546,8 @@ label span {
 }
 
 
+/* Mise en forme des liens de la barre de navigation */
+
 nav a {
 	font-family: 'work sans';
 	font-size: 20px;
