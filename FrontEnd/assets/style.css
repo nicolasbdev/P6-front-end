@@ -554,3 +554,7 @@ nav a {
 	text-decoration: none;
 	text-transform: lowercase;
 }
+
+nav a:hover {
+	color: #B1663C;
+}
