@@ -544,3 +544,13 @@ label span {
   cursor: pointer;
   padding: 8px 12px;
 }
+
+
+nav a {
+	font-family: 'work sans';
+	font-size: 20px;
+	gap: 50px;
+	color: black;
+	text-decoration: none;
+	text-transform: lowercase;
+}
