@@ -572,3 +572,7 @@ nav a:hover {
 .filtres button {
 	background-color: rgb(255, 252, 248);
 }
+
+#introduction p {
+	font-size: 15px;
+}
