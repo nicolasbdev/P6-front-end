@@ -550,7 +550,7 @@ label span {
 
 nav a {
 	font-family: 'work sans';
-	font-size: 20px;
+	font-size: 15px;
 	gap: 50px;
 	color: black;
 	text-decoration: none;
@@ -559,4 +559,8 @@ nav a {
 
 nav a:hover {
 	color: #B1663C;
+}
+
+#login_2{
+	font-weight: bold;
 }
