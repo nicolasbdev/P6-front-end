@@ -564,3 +564,7 @@ nav a:hover {
 #login_2{
 	font-weight: bold;
 }
+
+.button-modifier {
+	background-color: rgb(255, 252, 248);
+}
