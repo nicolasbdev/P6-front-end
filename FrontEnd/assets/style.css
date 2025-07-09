@@ -384,7 +384,7 @@ form {
 	padding-left: 40px;
     padding-right: 40px;
 	padding-top: 10px;
- padding-bottom: 10px;
+ 	padding-bottom: 10px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 25px;
@@ -395,7 +395,7 @@ form {
 	color: white;
 	cursor: pointer;
 	width: 60%;
-	background-color: #1D6154;
+	background-color: #A7A7A7;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 10px;
@@ -412,14 +412,16 @@ form {
 }
 
 .buttonValiderOk {
-	background-color: #1D6154;
-	border: none;
 	color: white;
+	background-color: #1D6154;
 	padding-left: 40px;
     padding-right: 40px;
-    font-size: 20px;
+	padding-top: 10px;
+ 	padding-bottom: 10px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 25px;
+	border: none;
 }
 
 .buttonPhoto:hover {
