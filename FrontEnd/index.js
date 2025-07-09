@@ -130,7 +130,7 @@ portfolioHeader.appendChild(buttonModif);
             // Ne pas recharger la page, juste réinitialiser le texte et masquer les éléments
             login.textContent = "Login"; 
             modeEditBar.style.display = "none"; // Cacher la barre de mode édition
-            document.querySelector(".modif-edition").style.display = "none"; // Cacher le bouton Modifier
+            document.querySelector(".button-modifier").style.display = "none"; // Cacher le bouton Modifier
             filtres.style.display = "block"; // Réafficher les filtres après la déconnexion
             buttonModif.style.display = "none"; // Masquer le bouton Modifier après la déconnexion
         });
