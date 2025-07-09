@@ -377,15 +377,9 @@ form {
 	width: 70%;
 }
 
-.buttonPhoto,
-.buttonValider {
-	color: white;
-	cursor: pointer;
-	width: 60%
-	
-}
 
 .buttonPhoto {
+	color: white;
 	background-color: #1D6154;
 	padding-left: 40px;
     padding-right: 40px;
@@ -394,17 +388,24 @@ form {
     font-size: 16px;
     cursor: pointer;
     border-radius: 25px;
+	border: none;
 }
 
 .buttonValider {
-	background-color: #A7A7A7;
-	border: none;
-	padding-left: 40px;
+	color: white;
+	cursor: pointer;
+	width: 60%;
+	background-color: #1D6154;
+    padding-left: 40px;
     padding-right: 40px;
-    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 25px;
+	border: none;
 }
+
 .buttonValider:focus {
 	background-color: #A7A7A7;
 	border: none;
