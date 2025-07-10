@@ -234,6 +234,11 @@ footer nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: end;
+	background-color: white;
+ }
+
+ #nav_login {
+	margin-top: 150px;
  }
 
 
@@ -564,7 +569,7 @@ nav a:hover {
 
 /* Mise en forme d'élements sur la page d'accueil et de connexion */
 
-#login_2{
+#login{
 	font-weight: bold;
 }
 
