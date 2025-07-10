@@ -230,12 +230,12 @@ form {
 	height: 50px;
  }
 
- footer li {
+footer nav {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding-top: 15px;
+	flex-direction: row;
+	justify-content: end;
  }
+
 
  /*Ci dessous code css pour terminer la page index.html */
 
