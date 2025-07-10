@@ -599,9 +599,3 @@ nav a:hover {
 	border: none;
 	box-shadow: 5px 5px  5px 2px #E8E8E8;
 } 
-
-/* Ajout d'un titre h1 factice pour annuler l'erreur du validateur */
-
-#intro_title {
-	display: none;
-}
