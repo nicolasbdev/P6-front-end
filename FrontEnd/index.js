@@ -131,8 +131,10 @@ portfolioHeader.appendChild(buttonModif);
             login.textContent = "Login"; 
             modeEditBar.style.display = "none"; // Cacher la barre de mode édition
             document.querySelector(".button-modifier").style.display = "none"; // Cacher le bouton Modifier
-            filtres.style.display = "block"; // Réafficher les filtres après la déconnexion
-            buttonModif.style.display = "none"; // Masquer le bouton Modifier après la déconnexion
+            filtres.innerHTML = ""; // Nettoie les anciens boutons (s'ils ont été supprimés)
+            createFilterButtons(); // Recrée les boutons de filtre
+            filtres.style.display = "block"; // Réaffiche les filtres
+            buttonModif.style.display = "none"; // Masque le bouton Modifier
         });
     }
 }
