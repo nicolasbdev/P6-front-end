@@ -45,23 +45,18 @@ displayGalleryModals();
 
 /************************* Delete photo modale **********************************/
 
-/* L'id est un identifiant de chaque élément pour pouvoir facilement l'identfier. */
-
 async function deleted() {
     const trashAll = document.querySelectorAll(".fa-trash-can");
 
     trashAll.forEach(trash => {
-        // Supprimer les anciens écouteurs éventuels
         trash.replaceWith(trash.cloneNode(true));
     });
 
-    // Re-sélectionner les icônes clonées
     const newTrashAll = document.querySelectorAll(".fa-trash-can");
 
     newTrashAll.forEach(trash => {
         trash.addEventListener("click", async () => {
             const id = trash.id;
-
             const init = {
                 method: "DELETE",
                 headers: {
@@ -73,11 +68,8 @@ async function deleted() {
                 const response = await fetch(`http://localhost:5678/api/works/${id}`, init);
                 if (response.ok) {
                     console.log("Image supprimée avec succès. ID:", id);
-
-                    // ⛔️ Ne ferme pas la modale ici
-                    // ✅ Mets à jour uniquement les deux galeries
-                    await displayGalleryModals(); // Recharge les images de la modale
-                    await displayWorks();         // Recharge la galerie principale
+                    await displayGalleryModals();
+                    await displayWorks();
                 } else {
                     console.error("Erreur API lors de la suppression :", response.status);
                 }
@@ -88,13 +80,28 @@ async function deleted() {
     });
 }
 
-
-/************************** Preview photo modale  *****************/
+/************************** Preview photo modale avec vérifications *****************/
 
 function preview() {
     buttonAjout.addEventListener("change", () => {
         const file = buttonAjout.files[0];
+
         if (file) {
+            const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+            const maxSize = 4 * 1024 * 1024;
+
+            if (!validTypes.includes(file.type)) {
+                errorForm.innerHTML = "Format de fichier non autorisé. (jpg, jpeg, png uniquement)";
+                buttonAjout.value = "";
+                return;
+            }
+
+            if (file.size > maxSize) {
+                errorForm.innerHTML = "Fichier trop volumineux. Maximum 4 Mo autorisé.";
+                buttonAjout.value = "";
+                return;
+            }
+
             const reader = new FileReader();
             reader.onload = function (e) {
                 previewImg.innerHTML = "";
@@ -104,6 +111,7 @@ function preview() {
                 buttonAjout.style.display = "none";
                 label.style.display = "none";
                 icone.style.display = "none";
+                errorForm.innerHTML = "";
             };
             reader.readAsDataURL(file);
         }
@@ -138,7 +146,7 @@ function validateForm() {
 }
 validateForm();
 
-/******* Message erreur si les champ titre n'est pas remplie *************/
+/******* Message erreur si les champ titre n'est pas rempli *************/
 
 async function verifChamp() {
     form.addEventListener("submit", () => {
@@ -189,13 +197,33 @@ function resetForm() {
     errorForm.innerHTML = "";
 }
 
-/********************** Envoi du formulaire  ********************************/
+/********************** Envoi du formulaire avec vérifications ************************/
 
 async function submitForm(e) {
     e.preventDefault();
+
+    const file = buttonAjout.files[0];
+    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+    const maxSize = 4 * 1024 * 1024;
+
+    if (!file) {
+        errorForm.innerHTML = "Veuillez ajouter une image.";
+        return;
+    }
+
+    if (!validTypes.includes(file.type)) {
+        errorForm.innerHTML = "Format de fichier non autorisé. (jpg, jpeg, png uniquement)";
+        return;
+    }
+
+    if (file.size > maxSize) {
+        errorForm.innerHTML = "Fichier trop volumineux. Maximum 4 Mo autorisé.";
+        return;
+    }
+
     try {
         const formData = new FormData();
-        formData.append('image', buttonAjout.files[0]);
+        formData.append('image', file);
         formData.append('title', title.value);
         formData.append('category', category.value);
 
@@ -206,6 +234,7 @@ async function submitForm(e) {
             },
             body: formData
         });
+
         if (response.ok) {
             console.log("L'envoi du fichier:", buttonAjout.name, "Titre:", title.value, "Catégorie:", category.value, "a été effectué. Statut:", response.status);
             await displayGalleryModals();
@@ -221,7 +250,6 @@ async function submitForm(e) {
     }
 }
 form.addEventListener("submit", submitForm);
-
 
 /************** Ouverture /  Fermeture Modals ************************/
 
