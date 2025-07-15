@@ -203,7 +203,7 @@ async function submitForm(e) {
     e.preventDefault();
 
     const file = buttonAjout.files[0];
-    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+    const validTypes = ["image/png", "image/jpg"];
     const maxSize = 4 * 1024 * 1024;
 
     if (!file) {
@@ -212,7 +212,7 @@ async function submitForm(e) {
     }
 
     if (!validTypes.includes(file.type)) {
-        errorForm.innerHTML = "Format de fichier non autorisé. (jpg, jpeg, png uniquement)";
+        errorForm.innerHTML = "Format de fichier non autorisé. (jpg, png uniquement)";
         return;
     }
 
