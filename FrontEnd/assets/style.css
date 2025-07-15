@@ -367,7 +367,7 @@ footer nav {
     font-size: 11px;
 	border-radius: 2px;
 	margin-left: 50px;
-    margin-top: 6px;
+	margin-top: 6px;
 	cursor: pointer;
 }
 
@@ -598,4 +598,21 @@ nav a:hover {
 	height: 30px;
 	border: none;
 	box-shadow: 5px 5px  5px 2px #E8E8E8;
-} 
+}
+
+.modalsGallery {
+	width: 600px; /* adapte selon tes besoins */
+	max-height: 80vh; /* limite la hauteur pour activer le scroll */
+	padding: 20px;
+	background: white;
+	overflow: hidden; /* important pour contenir le contenu */
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .galleryModals {
+	position: relative; /* ou fixed si c’est une vraie modale centrée */
+	flex: 1; /* prend toute la hauteur dispo */
+	overflow-y: auto; /* active la barre de scroll verticale si besoin */
+	margin: 20px 0;
+  }
